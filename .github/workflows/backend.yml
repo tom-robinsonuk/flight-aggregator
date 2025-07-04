@@ -15,5 +15,7 @@ jobs:
           distribution: temurin
 
       - name: Build and test
-        run: ./gradlew build
         working-directory: Project/flight-aggregator-app/backend/aggregator-service
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build
