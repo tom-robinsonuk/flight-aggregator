@@ -2,7 +2,9 @@ package com.flightaggregator.aggregator.controller
 
 import com.flightaggregator.aggregator.model.SearchRequest
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.CrossOrigin
 
+@CrossOrigin(origins = ["http://localhost:3000"])
 @RestController // Tells Spring this class handles API Calls and returns JSON/text...
 @RequestMapping("/search") // Sets the URL
 class SearchController {
