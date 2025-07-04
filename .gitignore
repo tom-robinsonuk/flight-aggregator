@@ -1,0 +1,50 @@
+# ---- Global ----
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# ---- IDEs / Editors ----
+.idea/
+.vscode/
+*.iml
+
+# ---- Node / Front‑End ----
+node_modules/
+dist/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+
+# ---- Java / Kotlin Gradle ----
+.gradle/
+build/
+out/
+# Fat jars & class files
+*.jar
+*.war
+*.class
+# IntelliJ
+*.ipr
+*.iws
+
+# ---- Terraform ----
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# ---- Docker ----
+*.env
+.env
+.env.*
+
+# ---- Test & Reports ----
+test-results/
+reports/
+*.lcov
+k6-summary*.json
+
+# ---- Misc ----
+log/
+tmp/
