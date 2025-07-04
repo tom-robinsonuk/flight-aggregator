@@ -1,12 +1,11 @@
-# Basic Project Read me for now
-# ✈️ Flight Aggregator
+# ✈️ Flight Aggregator – Mono‑Repo
 
 A portfolio project that recreates a **Skyscanner‑style flight‑search aggregator** while demonstrating:
 
-* Modern back‑end engineering with **Kotlin + Spring Boot**  
-* Responsive front‑end with **Next.js 15 (TypeScript)**  
-* Shift‑left quality: unit → contract → E2E (Playwright) → performance (k6)  
-* GitHub Actions CI/CD, Docker, Terraform and Cloud‑native deploys  
+* Modern back‑end engineering with **Kotlin + Spring Boot**
+* Responsive front‑end with **Next.js 15 (TypeScript)**
+* Shift‑left quality: unit → contract → E2E (Playwright) → performance (k6)
+* GitHub Actions CI/CD, Docker, Terraform and Cloud‑native deploys
 
 ---
 
@@ -25,14 +24,21 @@ flight-aggregator/
     │   │   └── common-lib/
     │   ├── frontend/             # Next.js app
     │   ├── infra/                # Terraform, K8s/YAML, docker‑compose
-    │   └── .github/workflows/    # CI definitions
+    │   └── .github/workflows/    # CI definitions (needs to move up)
     └── flight-aggregator-app-test/
         ├── unit/                 # JUnit5, MockK
         ├── e2e/                  # Playwright scripts
         └── perf/                 # k6 scenarios
 ```
 
-*(The repo root is initialised as a single Git repository so GitHub Actions can see the whole tree.)*
+---
+
+## ✅ API Endpoints
+
+| Method | Endpoint       | Description              |
+|--------|----------------|--------------------------|
+| GET    | `/health`      | Health check (returns OK)|
+| POST   | `/search`      | Accepts search request and returns mock flights |
 
 ---
 
@@ -40,34 +46,38 @@ flight-aggregator/
 
 ### Prerequisites
 
+| Tool         | Version (tested) |
+|--------------|------------------|
+| Java         | 17+              |
+
 
 ### Clone & Bootstrap
 
 ```bash
-git clone https://github.com/tom-robinsonuk/flight-aggregator
+git clone https://github.com/your-handle/flight-aggregator.git
 cd flight-aggregator/Project/flight-aggregator-app
 
 # Back‑end
-./gradlew clean build
+cd backend/aggregator-service
+./gradlew build
 
 # Front‑end
-cd frontend
-...
-
+cd ../../frontend
+pnpm install
+pnpm dev
 ```
 
 ---
 
 ## 🧪 Running Tests
 
-| Layer | Command |
-|-------|---------|
-
+```bash
+# From aggregator-service directory
+./gradlew test
+```
 
 ---
 
 ## 🔄 Continuous Integration
-
-`GitHub Actions` runs on every push & PR:
 
 ---
